@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP Mengoperasikan Mesin CNC - Teknik Mesin UNSOED</title>
+    <meta name="description"
+        content="Standar Operasional Prosedur (SOP) Mesin CNC untuk Laboratorium Teknik Mesin Universitas Jenderal Soedirman.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="nav-content">
+            <div class="brand">
+                <i class="fa-solid fa-gears logo-icon"></i>
+                <div class="brand-text">
+                    <h1>SOP Mesin CNC</h1>
+                    <p>Teknik Mesin - Universitas Jenderal Soedirman</p>
+                </div>
+            </div>
+            <div class="date-display" id="currentDate"></div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="toc">
+                <h3>Daftar Isi</h3>
+                <ul id="navList">
+                    <li><a href="#pendahuluan" class="active"><i class="fa-solid fa-book-open"></i> Pendahuluan</a></li>
+                    <li><a href="#spesifikasi"><i class="fa-solid fa-microchip"></i> Spesifikasi Mesin</a></li>
+                    <li><a href="#k3"><i class="fa-solid fa-shield-halved"></i> Keselamatan Kerja (K3)</a></li>
+                    <li><a href="#pra-operasi"><i class="fa-solid fa-list-check"></i> Pra-Operasi</a></li>
+                    <li><a href="#operasi"><i class="fa-solid fa-power-off"></i> Prosedur Operasi</a></li>
+                    <li><a href="#cycle-time"><i class="fa-solid fa-stopwatch"></i> Cycle Time</a></li>
+                    <li><a href="#pasca-operasi"><i class="fa-solid fa-broom"></i> Pasca-Operasi</a></li>
+                    <li><a href="#darurat" class="emergency-link"><i class="fa-solid fa-triangle-exclamation"></i>
+                            Keadaan Darurat</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Section: Pendahuluan -->
+            <section id="pendahuluan" class="content-section fade-in">
+                <div class="section-header">
+                    <h2><span class="step-num">01</span> Pendahuluan</h2>
+                </div>
+                <div class="card">
+                    <p>Standar Operasional Prosedur (SOP) ini dirancang sebagai panduan wajib bagi seluruh mahasiswa,
+                        laboran, dan dosen di lingkungan <strong>Laboratorium Teknik Mesin Universitas Jenderal
+                            Soedirman</strong> dalam mengoperasikan Mesin CNC (Computer Numerical Control).</p>
+                    <p>Tujuan SOP ini adalah untuk:</p>
+                    <ul class="styled-list">
+                        <li><i class="fa-solid fa-check text-accent"></i> Mencegah terjadinya kecelakaan kerja selama
+                            praktikum atau pengerjaan proyek.</li>
+                        <li><i class="fa-solid fa-check text-accent"></i> Menjaga umur pakai (lifetime) komponen mesin
+                            CNC akibat kelalaian operasional.</li>
+                        <li><i class="fa-solid fa-check text-accent"></i> Memastikan hasil pengerjaan presisi dan sesuai
+                            spesifikasi.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section: Spesifikasi -->
+            <section id="spesifikasi" class="content-section fade-in">
+                <div class="section-header">
+                    <h2><span class="step-num">02</span> Spesifikasi Mesin CNC</h2>
+                </div>
+                <div class="card">
+                    <p>Berikut adalah spesifikasi teknis untuk mesin <strong>Jaglo VF-500i</strong> (Standar Industri
+                        Bawaan) yang ada pada Laboratorium Teknik Mesin:</p>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">Travel Sumbu X/Y/Z</span>
+                            <span class="spec-value">500 / 380 / 400 mm</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Tipe Spindle & Taper</span>
+                            <span class="spec-value">Direct Drive, BT30</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Max Speed Spindle</span>
+                            <span class="spec-value">12.000 RPM</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Ukuran Meja (Table)</span>
+                            <span class="spec-value">650 x 380 mm</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Kapasitas Tool/ATC</span>
+                            <span class="spec-value">20 Tools (Arm Type)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Sistem Kontrol CNC</span>
+                            <span class="spec-value">Mitsubishi M80</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: K3 -->
+            <section id="k3" class="content-section fade-in">
+                <div class="section-header">
+                    <h2><span class="step-num">03</span> Keselamatan Kerja (K3)</h2>
+                </div>
+                <div class="grid-cards">
+                    <div class="card warning-card border-top-warning">
+                        <div class="card-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+                        <h3>Alat Pelindung Diri (APD)</h3>
+                        <p>Alat keselamatan yang WAJIB digunakan:</p>
+                        <ul>
+                            <li>Kacamata Safety (Safety Goggles)</li>
+                            <li>Sepatu Safety (Safety Shoes)</li>
+                            <li>Pakaian kerja/wearpack laboratorium</li>
+                        </ul>
+                    </div>
+                    <div class="card danger-card border-top-danger">
+                        <div class="card-icon"><i class="fa-solid fa-hand-holding-hand"></i></div>
+                        <h3>Larangan Keras!</h3>
+                        <ul>
+                            <li><strong>Dilarang keras</strong> memakai sarung tangan kain saat mesin sedang
+                                running/spindle berputar.</li>
+                            <li>Lepaskan seluruh perhiasan, jam tangan, dan cincin.</li>
+                            <li>Bagi yang berambut panjang, rambut wajib diikat erat ke belakang.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Pra-Operasi -->
+            <section id="pra-operasi" class="content-section fade-in">
+                <div class="section-header">
+                    <h2><span class="step-num">04</span> Checklist Pra-Operasi</h2>
+                    <p class="subtitle">Wajib dicentang untuk verifikasi keamanan sebelum menghidupkan mesin CNC</p>
+                </div>
+                <div class="card checklist-card">
+                    <form id="pra-operasi-checklist">
+                        <label class="checklist-item">
+                            <input type="checkbox" class="pra-cb">
+                            <span class="checkmark"></span>
+                            <span class="checklist-text">Area sekitar mesin bersih dari cairan oli yang tercecer,
+                                tumpukan beram (chip), dan tidak ada barang yang mengganggu pergerakan operator.</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" class="pra-cb">
+                            <span class="checkmark"></span>
+                            <span class="checklist-text">Volume Coolant (Cairan Pendingin) dan Lubrication (Oli Pelumas
+                                Way) dalam batas aman dan tidak menunjukan indikator 'LOW'.</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" class="pra-cb">
+                            <span class="checkmark"></span>
+                            <span class="checklist-text">Tekanan Angin Kompresor memadai (selang terhubung dan katup
+                                angin terbuka penuh).</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" class="pra-cb">
+                            <span class="checkmark"></span>
+                            <span class="checklist-text">Alat potong (Tooling) terpasang dengan kokoh, dan benda kerja
+                                sudah dicekam di ragum dengan sangat kuat (kencang).</span>
+                        </label>
+
+                        <div class="checklist-footer">
+                            <button type="button" id="verify-checklist-btn" class="primary-btn locked-btn" disabled><i
+                                    class="fa-solid fa-lock"></i> Verifikasi Kesiapan</button>
+                            <span id="checklist-status" class="status-badge hidden"><i
+                                    class="fa-solid fa-circle-check"></i> Mesin Siap Dioperasikan</span>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Section: Operasi -->
+            <section id="operasi" class="content-section fade-in">
+                <div class="section-header">
+                    <h2><span class="step-num">05</span> Langkah Prosedur Operasi</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="timeline-content">
+                            <h3>1. Power ON</h3>
+                            <p>Putar saklar utama (Main Switch) yang terletak di bagian belakang/samping mesin ke posisi
+                                'ON'. Kemudian, tekan tombol <strong>POWER ON</strong> pada panel kontrol CNC dan tunggu
+                                hingga sistem OS/Controller booting sepenuhnya.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fa-solid fa-arrows-to-circle"></i></div>
+                        <div class="timeline-content">
+                            <h3>2. Return to Reference Point (Zero Return)</h3>
+                            <p>Bebaskan tombol Emergency Stop (Putar ke kanan). Lakukan <strong>Zero Return / Reference
+                                    Return</strong> untuk sumbu X, Y, dan Z (untuk Milling) atau X dan Z (untuk
+                                Lathe/Bubut). Ini wajib dilakukan agar mesin mengetahui posisi referensi awalnya.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fa-solid fa-crosshairs"></i></div>
+                        <div class="timeline-content">
+                            <h3>3. Setting Titik Nol Benda Kerja</h3>
+                            <p>Gunakan Edge Finder atau Tool Sentuh untuk menentukan titik nol (X0, Y0, Z0) dari benda
+                                kerja. Masukkan nilai koordinat offset tersebut ke layar WORK OFFSET (G54 / G55 dsb).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>4. Input Program & Dry Run</h3>
+                            <p>Transfer program G-Code dari USB/Jaringan ke memori mesin. Sebelum pemotongan aktual,
+                                gunakan mode <strong>DRY RUN</strong> dan perlambat <em>Feedrate Override</em> serta
+                                amati pergerakan tool (pastikan posisi tool sedikit dijauhkan / Z+ agar tidak menabrak
+                                benda).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>5. Eksekusi Program (Auto Mode)</h3>
+                            <p>Ubah mode ke <strong>AUTO / MEM</strong>. Aktifkan Coolant, tutup pintu pelindung mesin
+                                rapat-rapat. Putar <em>Rapid Override</em> ke persentase rendah (25%), tekan tombol
+                                <strong>CYCLE START</strong> secata hati-hati, amati tool menyentuh material.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Cycle Time -->
+            <section id="cycle-time" class="content-section fade-in">
+                <div class="section-header">
+                    <h2><span class="step-num">06</span> Estimasi Cycle Time</h2>
+                    <p class="subtitle">Kalkulator mandiri untuk menghitung perkiraan waktu pemesinan</p>
+                </div>
+                <div class="card">
+                    <p>Pada layar controller Mitsubishi M80, <strong>Cycle Time aktual</strong> akan otomatis direkam
+                        dan dapat dilihat di pojok kanan bawah Monitor (Layar Monitor Utama). Jika Anda perlu
+                        merencanakan estimasi dasar sebelum mengeksekusi program, gunakan kalkulator pemotongan lurus
+                        sederhana berikut:</p>
+
+                    <div class="calculator-container">
+                        <div class="input-group">
+                            <label for="cutting-distance">Jarak Potong Total (mm)</label>
+                            <input type="number" id="cutting-distance" placeholder="Misal: 150">
+                        </div>
+                        <div class="input-group">
+                            <label for="feed-rate">Kecepatan Makan / Feed Rate (mm/min)</label>
+                            <input type="number" id="feed-rate" placeholder="Misal: 40">
+                        </div>
+                        <div class="input-group">
+                            <label for="num-passes">Jumlah Lintasan (Passes)</label>
+                            <input type="number" id="num-passes" value="1" min="1">
+                        </div>
+                        <button id="calculate-btn" class="primary-btn"><i class="fa-solid fa-calculator"></i> Hitung
+                            Estimasi</button>
+                    </div>
+
+                    <div id="calculator-result" class="result-box hidden">
+                        <h4>Waktu Pemotongan Murni: <span id="time-output" class="text-accent">0 Menit 0 Detik</span>
+                        </h4>
+                        <p class="disclaimer-text">*Waktu ini adalah teori pemotongan linier (G01). Belum termasuk waktu
+                            G00 (Rapid Traverse) dan Tool Change.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Pasca Operasi -->
+            <section id="pasca-operasi" class="content-section fade-in">
+                <div class="section-header">
+                    <h2><span class="step-num">07</span> Prosedur Pasca-Operasi</h2>
+                </div>
+                <div class="card">
+                    <ul class="task-list">
+                        <li>
+                            <i class="fa-regular fa-square-check"></i>
+                            <div>
+                                <strong>Membersihkan Mesin</strong>
+                                <p>Gunakan semprotan udara (air-gun) untuk menyingkirkan beram, lalu sapu beram keluar
+                                    dari bak penampung. Bilas dengan air coolant untuk menghilangkan residu sisa. Mesin
+                                    harus ditinggalkan dalam keadaan bersih seperti sedia kala.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-square-check"></i>
+                            <div>
+                                <strong>Melepaskan Benda Kerja & Tool</strong>
+                                <p>Lepas alat potong dan kembalikan ke rak tool. Lepas benda kerja dari chuck/ragum.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-square-check"></i>
+                            <div>
+                                <strong>Posisi Parkir Mesin</strong>
+                                <p>Pindahkan axis X dan Y di tengah meja, dan turunkan sumbu Z secukupnya dalam posisi
+                                    parkir aman. Jangan biarkan tool holder tersangkut di atas ragum.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-square-check"></i>
+                            <div>
+                                <strong>Power OFF</strong>
+                                <p>Tekan EMERGENCY STOP. Matikan panel <strong>POWER OFF</strong>, tunggu hingga layar
+                                    LCD mati. Terakhir, putar saklar utama (Main Switch) ke posisi 'OFF'.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section: Emergency -->
+            <section id="darurat" class="content-section fade-in">
+                <div class="emergency-box">
+                    <div class="emergency-icon"><i class="fa-solid fa-triangle-exclamation fa-beat"></i></div>
+                    <div class="emergency-content">
+                        <h2>Prosedur Keadaan Darurat</h2>
+                        <p>Apabila terdengar suara benturan/tabrakan (Crash), getaran tidak normal, api, benda kerja
+                            terlempar, atau salah program yang membahayakan, segera lakukan tindakan berikut:</p>
+                        <ol>
+                            <li>Pukul tombol <strong class="text-danger">EMERGENCY STOP</strong> (tombol jamur merah)
+                                secepat mungkin.</li>
+                            <li>JANGAN membuka pintu pelindung sampai putaran spindle benar-benar berhenti total.</li>
+                            <li>Matikan aliran listrik dan putar Main Switch ke posisi OFF jika memungkinkan.</li>
+                            <li>Segera laporkan kejadian kepada Dosen Pengampu atau Laboran yang bertugas. Jangan
+                                berusaha memperbaiki kerusakan sendiri!</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>&copy; <span id="year"></span> Laboratorium Teknik Mesin, Fakultas Teknik - Universitas Jenderal
+                    Soedirman. Dibuat mematuhi standar ISO Keselamatan Tambahan.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
