@@ -140,4 +140,35 @@ document.addEventListener('DOMContentLoaded', () => {
             statusBadge.style.display = 'flex';
         });
     }
+
+    // 7. Statistic Counters Animation
+    const stats = document.querySelectorAll('.stat-value');
+    const statsSection = document.getElementById('statistik');
+    
+    if (statsSection && stats.length > 0) {
+        const statsObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                stats.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-target'));
+                    const duration = 2000; // 2 seconds
+                    const step = target / (duration / 16); // 60fps
+                    let current = 0;
+                    
+                    const updateCounter = () => {
+                        current += step;
+                        if (current < target) {
+                            stat.textContent = Math.floor(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            stat.textContent = target;
+                        }
+                    };
+                    updateCounter();
+                });
+                statsObserver.unobserve(statsSection);
+            }
+        }, { threshold: 0.5 });
+        
+        statsObserver.observe(statsSection);
+    }
 });
